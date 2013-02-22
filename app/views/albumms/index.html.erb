@@ -1,0 +1,28 @@
+<h1>Listing albumms</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Descripton</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @albumms.each do |albumm| %>
+  <tr>
+    <td><%= albumm.name %></td>
+    <td><%= albumm.descripton %></td>
+    
+    <td><%= link_to 'Show', albumm %></td>
+    <td><%= link_to 'Edit', edit_albumm_path(albumm) %></td>
+    <td><%= link_to 'Destroy', albumm, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'photos',  albumm_photos_path(albumm) %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Albumm', new_albumm_path %>

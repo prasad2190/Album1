@@ -1,0 +1,21 @@
+<h1>Listing photos</h1>
+<ul class="thumbnails">
+<% @photos.each do |photo| %>
+  <li class="span3">
+    <div class="thumbnail">
+    <%= photo.name %>
+    <%= photo.description %>
+    <%= image_tag(photo.image_url,:size=>"250x250") %>
+    <%= link_to 'Show', albumm_photo_path(@albumm, photo) %>
+    <%= link_to 'Edit',  edit_albumm_photo_path(@albumm,photo) %>
+    <%= link_to 'Destroy', albumm_photo_path(@albumm, photo), confirm: 'Are you sure?', method: :delete %>
+  </div>
+</li>
+
+
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Photo', new_albumm_photo_path(@albumm) %>

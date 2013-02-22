@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @albumm.name %>
+</p>
+
+<p>
+  <b>Descripton:</b>
+  <%= @albumm.descripton %>
+</p>
+
+
+<%= link_to 'Edit', edit_albumm_path(@albumm) %> |
+<%= link_to 'Back', albumms_path %>

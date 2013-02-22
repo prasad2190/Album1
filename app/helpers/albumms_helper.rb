@@ -1,0 +1,2 @@
+module AlbummsHelper
+end

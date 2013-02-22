@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Album</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="album">
+
+  <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Album</a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><%= link_to "Home" %>
+            <li><%= link_to "Albums" %>
+              <li><%= link_to "Photos" %>
+            
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </ul>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+	<div>
+  <% if user_signed_in? %>
+  
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Sign up", user_session_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="span9"><%= yield %></div>
+    <div class="span3">
+      <h2>About us</h2>
+       This is our album application.
+       In this application You can 
+       create no of albums in that you 
+       can store your images or 
+       photos.It is very user friendly.
+       you can easily create your albums.
+     </div>
+   </div>
+ </div>
+
+</body>
+</html>
